@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Agentforce Service Agent</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+        h1 { color: #0070d2; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Agentforce Test Page</h1>
+    <p>This is a simple external page to test your Salesforce Agentforce Service Agent chat widget.</p>
+    <p>Open the chat button (usually bottom-right) and start typing queries about your custom object!</p>
+
+    <!-- Paste your Salesforce Embedded Messaging code snippet HERE -->
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.hideChatButtonOnLoad = false;
+
+			embeddedservice_bootstrap.init(
+				'00DKZ00000SCCNC',
+				'Deployment1',
+				'https://ac1762412468525.my.site.com/ESWDeployment11767524356358',
+				{
+					scrt2URL: 'https://ac1762412468525.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://ac1762412468525.my.site.com/ESWDeployment11767524356358/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
+</body>
+</html>
